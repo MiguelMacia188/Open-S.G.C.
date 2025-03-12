@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open S.G.C.</title>
+  <style>
+    body {
+      font-family: MS Sans Serif, Tahoma, Geneva, sans-serif;
+      background-color: #C0C0C0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .menu-bar {
+      background: #ECE9D8;
+      padding: 4px;
+      border-bottom: 2px solid #808080;
+      display: flex;
+      gap: 10px;
+      justify-content: left;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .menu-bar span {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .menu-bar span:hover {
+      text-decoration: underline;
+    }
+
+    .window {
+      width: 90%;
+      max-width: 850px;
+      background: #ECE9D8;
+      border: 2px solid #808080;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .title-bar {
+      background: #000080;
+      color: white;
+      padding: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      border: 2px solid #808080;
+      text-align: left;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .info {
+      background: #FFF;
+      padding: 8px;
+      border: 2px inset #808080;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .info p {
+      margin: 4px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      border: 1px solid #808080;
+      padding: 6px;
+      text-align: left;
+    }
+
+    th {
+      background: #D4D0C8;
+    }
+
+    .observation {
+      margin-top: 10px;
+      padding: 8px;
+      background: #FFF;
+      border: 2px inset #808080;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    .observation textarea {
+      width: 100%;
+      height: 50px;
+      resize: none;
+      display: block;
+      border: 2px inset #808080;
+      background: #FFF;
+    }
+
+    .observation .datetime-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .observation input[type="datetime-local"] {
+      width: 120px;
+      border: 2px inset #808080;
+      background: #FFF;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="window">
+    <div class="menu-bar">
+      <span>Archivo</span>
+      <span>Editar</span>
+      <span>At. Cliente</span>
+      <span>Ciclo Comercial</span>
+      <span>Mant. Entidades</span>
+      <span>Mant. BD</span>
+      <span>Módulos</span>
+      <span>Ventana</span>
+      <span>?</span>
+    </div>
+    <div class="title-bar">Open S.G.C. - Consulta por Contrato</div>
+    <div class="content">
+      <div class="info">
+        <p><strong>N.I.C.:</strong> 7054340</p>
+        <p><strong>Tipo Servicio:</strong> Todos los servicios</p>
+        <p><strong>Dir. Contrato:</strong> CL 1C, 7 80 7563432 (URB. CIUDAD FUTURO PUERTO ESCONDIDO...)</p>
+        <p><strong>Cliente:</strong>  ALVAREZ SALAS ABRAHAN</p>
+      </div>
+      <table>
+        <tr>
+          <th>Servicio</th>
+          <th>Tipo de servicio</th>
+          <th>N° de medidor</th>
+          <th>Marca del medidor</th>
+          <th>Tipo de medidor</th>
+          <th>Estado de medidor</th>
+        </tr>
+        <tr>
+          <td>8705642</td>
+          <td>Energía Regulada</td>
+          <td>0000453116</td>
+          <td>LANDIS E230</td>
+          <td>Activa</td>
+          <td>Normal</td>
+        </tr>
+      </table>
+      <div class="observation">
+        <textarea placeholder="Acometida fraudulenta por la parte de atrás de la vivienda verificar y normalizar"></textarea>
+        <div class="datetime-container">
+          <label>Fecha y Hora:</label>
+          <input type="datetime-local">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
