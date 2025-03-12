@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Open S.G.C.</title>
   <style>
     body {
@@ -14,6 +14,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      overflow-x: hidden;
     }
 
     .menu-bar {
@@ -23,7 +24,8 @@
       display: flex;
       gap: 10px;
       justify-content: left;
-      flex-wrap: wrap;
+      white-space: nowrap;
+      overflow-x: auto;
       font-size: 12px;
     }
 
@@ -39,10 +41,12 @@
     .window {
       width: 90%;
       max-width: 850px;
+      min-width: 850px;
       background: #ECE9D8;
       border: 2px solid #808080;
       padding: 10px;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      overflow-x: auto;
     }
 
     .title-bar {
@@ -57,6 +61,7 @@
 
     .content {
       padding: 10px;
+      overflow-x: auto;
     }
 
     .info {
@@ -71,11 +76,19 @@
       margin: 4px 0;
     }
 
+    .editable {
+      border: none;
+      background: transparent;
+      font-size: 12px;
+      width: auto;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       background: white;
       font-size: 12px;
+      table-layout: fixed;
     }
 
     th,
@@ -87,6 +100,10 @@
 
     th {
       background: #D4D0C8;
+    }
+
+    td input.editable {
+      min-width: 80px;
     }
 
     .observation {
@@ -138,10 +155,11 @@
     <div class="title-bar">Open S.G.C. - Consulta por Contrato</div>
     <div class="content">
       <div class="info">
-        <p><strong>N.I.C.:</strong> 7054340</p>
+        <p><strong>N.I.C.:</strong> <input type="text" class="editable" value="7054340"></p>
         <p><strong>Tipo Servicio:</strong> Todos los servicios</p>
-        <p><strong>Dir. Contrato:</strong> CL 1C, 7 80 7563432 (URB. CIUDAD FUTURO PUERTO ESCONDIDO...)</p>
-        <p><strong>Cliente:</strong>  ALVAREZ SALAS ABRAHAN</p>
+        <p><strong>Dir. Contrato:</strong> <input type="text" class="editable" style="width: 400px;"
+            value="CL 1C, 7 80 7563432 (URB. CIUDAD FUTURO PUERTO ESCONDIDO...)"></p>
+        <p><strong>Cliente:</strong> <input type="text" class="editable" value="ALVAREZ SALAS ABRAHAN"></p>
       </div>
       <table>
         <tr>
@@ -153,16 +171,17 @@
           <th>Estado de medidor</th>
         </tr>
         <tr>
-          <td>8705642</td>
+          <td><input type="text" class="editable" value="8705642"></td>
           <td>Energía Regulada</td>
-          <td>0000453116</td>
-          <td>LANDIS E230</td>
+          <td><input type="text" class="editable" value="0000453116"></td>
+          <td><input type="text" class="editable" value="LANDIS E230"></td>
           <td>Activa</td>
           <td>Normal</td>
         </tr>
       </table>
       <div class="observation">
-        <textarea placeholder="Acometida fraudulenta por la parte de atrás de la vivienda verificar y normalizar"></textarea>
+        <textarea
+          placeholder="Acometida fraudulenta por la parte de atrás de la vivienda verificar y normalizar"></textarea>
         <div class="datetime-container">
           <label>Fecha y Hora:</label>
           <input type="datetime-local">
